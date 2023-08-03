@@ -1,0 +1,38 @@
+.container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-template-rows: repeat(auto-fill, 200px);
+	block-size: 100vh;
+	max-inline-size: 1024px;
+	margin: auto;
+	gap: 2rem;
+	grid-auto-flow: row;
+}
+
+.item {
+	border: 5px solid violet;
+	counter-increment: item;
+	font-size: 3rem;
+	font-family: arial;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.item:nth-child(3) {
+	border-color: green;
+	grid-row-start: 2;
+	grid-row-end: 4;
+	grid-column-end: span 2;
+}
+
+.item:nth-child(4) {
+	border-color: brown;
+	grid-column-start: 2;
+	grid-row-start: 1;
+	grid-row-end: span 2;
+}
+
+.item::before {
+	content: counter(item);
+}

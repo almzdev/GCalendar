@@ -1,0 +1,33 @@
+.container {
+	display: grid;
+	grid-template-columns: repeat(6, 200px);
+	grid-auto-rows: 200px;
+	block-size: 100vh;
+	max-inline-size: 1024px;
+	margin: auto;
+	border: 10px solid blue;
+	place-content: center space-evenly;
+}
+
+.item {
+	border: 5px solid violet;
+	counter-increment: item;
+	font-size: 3rem;
+	font-family: arial;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.item::before {
+	content: counter(item);
+}
+
+.item:nth-child(3) {
+	border-color: green;
+	place-self: center;
+}
+
+.item:nth-child(4) {
+	border-color: brown;
+}

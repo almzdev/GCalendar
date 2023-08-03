@@ -1,0 +1,32 @@
+.container {
+	display: grid;
+	grid-template-columns: [inline-start] 200px [inline-2] 700px [inline-end];
+	grid-template-rows: [block-start] 100px [block-2] 600px [block-end];
+    grid-template-areas: "header header" 
+                        "sidebar main";
+	column-gap: 10px;
+	row-gap: 15px;
+}
+
+.item {
+	border: 5px solid violet;
+	counter-increment: item;
+}
+
+.item::before {
+	content: counter(item);
+}
+
+.item:nth-of-type(1) {
+	grid-area: header;
+}
+
+.item:nth-of-type(2) {
+	grid-area: sidebar;
+	border-color: aqua;
+}
+
+.item:nth-of-type(3) {
+	grid-area: main;
+	border-color: chocolate;
+}

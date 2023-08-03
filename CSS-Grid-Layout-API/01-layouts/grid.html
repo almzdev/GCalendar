@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+
+    <style>
+        body {
+            display: grid;
+            block-size: 90vh;
+            grid-template-columns: 20% 1fr;
+            grid-template-rows: 50px 1fr;
+        }
+
+        header {
+            border: 1px solid red;
+            grid-column: 1 / -1;
+        }
+
+        nav {
+            border: 1px solid blue;
+        }
+
+        main {
+            border: 1px solid purple;
+        }
+    </style>
+</head>
+
+<body>
+    <header>header</header>
+    <nav>sidebar</nav>
+    <main>main</main>
+</body>
+
+</html>
